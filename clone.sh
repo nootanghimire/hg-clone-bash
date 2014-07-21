@@ -6,5 +6,6 @@ cd $2
 chmod +x pull.sh
 touch config-a-bash-b
 echo "100">config-a-bash-b
-echo "Cloning completed. Now running pull.sh Please run pull.sh in the repo's directory"
+echo "Cloning completed. Now running pull.sh. Please run pull.sh in the repo's directory from next time"
+./pull.sh
 
