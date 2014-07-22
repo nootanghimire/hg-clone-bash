@@ -1,8 +1,14 @@
 #!/bin/bash
+echo "Getting the rev numb. Please wait....."
+curl https://hg.mozilla.org/mozilla-central/log > /tmp/mozhg
 
-
+y=$(cat /tmp/mozhg | grep shortlog)
+num=${y//[^0-9]/}
+echo "The current rev is $num. Please confirm it from https://hg.mozilla.org/mozilla-central/log if you want to."
+echo "Press any key to continue...."
+read
 i=$(<config-a-bash-b)
-while [ $i -lt 195225 ]
+while [ $i -lt $num ]
   do
     echo "Executing: hg pull --rev $i"
       hg pull --rev $i
@@ -10,7 +16,7 @@ while [ $i -lt 195225 ]
       echo "$i" > config-a-bash-b
   done
 
-if [ $i -ge 195225 ];
+if [ $i -ge $num ];
   then
     rm -rf config-a-bash-b
     echo "removed config-a-bash-b"
