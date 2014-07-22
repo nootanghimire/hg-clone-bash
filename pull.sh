@@ -1,9 +1,7 @@
 #!/bin/bash
-echo "Getting the rev numb. Please wait....."
-curl https://hg.mozilla.org/mozilla-central/log > /tmp/mozhg
+echo "Getting the rev number. Please wait....."
 
-y=$(cat /tmp/mozhg | grep shortlog)
-num=${y//[^0-9]/}
+num=$(curl https://hg.mozilla.org/mozilla-central/log | grep shortlog | grep -o '[0-9]*')
 echo "The current rev is $num. Please confirm it from https://hg.mozilla.org/mozilla-central/log if you want to."
 echo "Press any key to continue...."
 read
