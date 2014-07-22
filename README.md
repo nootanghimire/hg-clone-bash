@@ -1,7 +1,7 @@
 hg-clone-bash
 =============
 
-Bash Script to pull mercurial repo changeset-by-changeset
+Bash Script to pull mercurial repo changeset-by-changeset (inspired by http://stackoverflow.com/questions/4716200/is-there-any-way-to-clone-a-repository-from-the-web-incrementally )
 
 NOTE: CURRENTLY OPTIMIZED FOR mozilla-central repo. I wish to find no. of total revisions in future. 
 One probable way might be `curl`ing the remote address and finding the changeset (Doesn't yet know if all the remote repo could be supported like this)
