@@ -11,7 +11,7 @@ One probable way might be `curl`ing the remote address and finding the changeset
 1. Clone the Repo,
 2. go over to the directory 
 3. run `./clone.sh <remote-repo-addr> <local-addr>`
-4. If you cancelled the process, go to <local-addr> and run `./pull.sh`
+4. If you cancelled the process, go to `<local-addr>` and run `./pull.sh`
 
 #Problems
 
